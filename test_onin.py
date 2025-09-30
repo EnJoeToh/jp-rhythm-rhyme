@@ -11,6 +11,11 @@ def test_kanaized_text():
     assert jt.plain_text_to_kanaized_text("二千二十五") == "にせんにじゅうご"
     assert jt.plain_text_to_kanaized_text("コンピューターだよ") == "コンピューターだよ"
     assert jt.plain_text_to_kanaized_text("こんぴゅーたーだよ") == "こんぴゅーたーだよ"
+    assert jt.plain_text_to_kanaized_text("ーの") == "ーの"
+    assert jt.plain_text_to_kanaized_text("んー") == "んー"
+    assert jt.plain_text_to_kanaized_text("っー") == "っー"
+    assert jt.plain_text_to_kanaized_text("[ー") == "[ー"
+
 
 with open("cv_map.json", "r", encoding="utf-8") as f:
         cv_map = json.load(f)
